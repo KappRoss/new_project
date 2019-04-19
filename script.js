@@ -383,20 +383,21 @@ export default func;
 //______________________________________________________________________
 
 //  iterative process! smallest divider
-// const smallestDivisor = (num) => {
+ const smallestDivisor = (num) => {
   
-//   if (num === 1){
-//   	return num
-//   }
-//   if (num > 0){
-//   const iter = (counter, acc) => {
-//     if (num % acc === 0){
-//       return acc
-//     }
-//     return iter(counter , acc + 1)
-//   }
-//   return iter(num, 2)
-//   }
+  if (num === 1){
+   	return num
+   }
+   if (num > 0){
+   const iter = (counter, acc) => {
+    if (num % acc === 0){
+      return acc
+     }
+     return iter(counter , acc + 1)
+   }
+   return iter(num, 2)
+   }
   
-// }
-// console.log(smallestDivisor(121))
+ }
+ console.log(smallestDivisor(121))
+ console.log() 
