@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+
+	function second(str) {
+			let new_string = str.split(' ');
+			return next_Step(new_string)	
+		function next_Step(arr){
+
+			new_arrStr = '';
+
+			for (let current_word = 0; current_word < arr.length; current_word++){  // текущее слово
+				let counts = 0; // счетчик повторений слова 
+				
+				for (let words_arr = 0; words_arr < arr.length; words_arr++){ // сравнение текущего слова со всеми другими в масиве
+					if(arr[current_word] === arr[words_arr]){
+						counts += 1;    // возможно есть решиние сразу перейти к записи слова после первого совпадения
+										// не проверяя отсльные элементы. что сократит время выполнения программы
+					}
+				}
+
+				if ((counts > 1) && arr[current_word] !== undefined){     /// если счетчик больше одного совпадения то в новую строку записываем ТО слово
+					new_arrStr += arr[current_word] + " " ;  // у которого есть эти совпадения
+					let temp = arr[current_word];
+					for (let k = 0; k < arr.length; k++) {
+						if(arr[k] === temp){	// и нужно удалить все эти совпадающие слова со входного масива
+							delete arr[k]			// чтобы они вновь не попадали в ТЕКУЩЕЕ СЛОВО
+						}
+					}                                    
+				}
+				else{
+					delete arr[current_word]
+				}
+			}
+			console.log(typeof(new_arrStr))
+			return new_arrStr.slice(0, -1);
+
+		}	
+	}
+
+
+
+		// 	for(var i=0;i< arr.length;i++){
+	 //  			var key = arr[i];
+	 //  			counts[key] = (counts[key])? counts[key] + 1 : delete arr[counts[key]] ;
+		// 	}
+		// 	return myCurrentArray
+	
+		// }
+		
+		alert(second('alpha beta beta gamma gamma gamma delta beta beta delta'));
+		
+
+
+
+	</script>
+</body>
+</html>

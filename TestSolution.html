@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- https://repl.it/@KappRoss/task1 -->
+	<script>
+		function first(str) {
+			
+			let total = "";
+
+			function abcd(item){
+				let arr_en = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+				for (let i = 0; i < arr_en.length; i++){	
+						if(item === arr_en[i]){
+							return arr_en[i]
+						}
+					}
+				}
+			
+
+  			for (let i = 0; i < str.length; i++){
+  				let c = i + 1
+    			if (str[c] === abcd(str[c])){						
+     				total = total + str[i]
+		    	}
+		    	else if(str[i] === str[c]){
+		    		str.replace([i])
+		    	}
+		    	else{
+		    		total = total + str[i] 
+		    	}
+		  	}
+		  	console.log(total);
+
+		}
+		first("a333affffabbb111111123");
+	</script>
+</body>
+</html>
